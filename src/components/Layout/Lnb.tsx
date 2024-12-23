@@ -54,7 +54,10 @@ const Lnb = ({ active }: Lnb) => {
                         </span>
                     </LnbLink>
                 </div>
-                <div className="shrink-0 pb-[2rem]">
+                <div
+                    className={`shrink-0 pb-[2rem] ${active ? "block" : "hidden"
+                    }`}
+                >
                     <p className="text-[1rem] font-[400] leading-[135%] text-[var(--moneed-gray-8)] mt-[2.4rem]">
                         고객센터: moneed@example.com
                     </p>

@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <div className="flex">
-                <Lnb active />
+                <Lnb />
                 <div className="flex-1">
                     <Header />
                     <Outlet />
