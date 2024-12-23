@@ -40,7 +40,9 @@ const MainShortforms = () => {
 
     return (
         <>
-            <AlignCarousel slides={videoSlides} type="video" options={ALIGNOPTIONS} slidesToShow={3} />
+            <div className="mx-[-2rem] overflow-x-hidden">
+                <AlignCarousel slides={videoSlides} type="video" options={ALIGNOPTIONS} slidesToShow={3} />
+            </div>
         </>
     );
 };

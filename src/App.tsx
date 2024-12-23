@@ -2,19 +2,21 @@ import { Outlet } from "react-router";
 import Footer from "./components/Layout/Footer";
 import Header from "./components/Layout/Header";
 import Lnb from "./components/Layout/Lnb";
+import MobileNav from "./components/Layout/MobileNav";
 
 
 function App() {
 
     return (
         <>
-            <div className="flex h-[100vh]">
+            <div className="flex">
                 <Lnb active />
                 <div className="flex-1">
                     <Header />
                     <Outlet />
                     <Footer />
                 </div>
+                <MobileNav />
             </div>
         </>
     )
