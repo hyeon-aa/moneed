@@ -73,12 +73,13 @@ const Comments = () => {
     return (
         <>
             <div className="px-[2rem] max-w-[128rem] mx-auto">
-                <div >
+                <div>
                     <div className="pb-[1.3rem] pt-[1.4rem]">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-[.6rem]">
                                 <div className="rounded-full overflow-hidden aspect-[1/1] w-[2.4rem]">
-                                    <img src="/src/assets/temp/sample3.png" alt="" className="w-full h-full object-cover" />
+                                    <img src="/src/assets/temp/sample3.png" alt=""
+                                         className="w-full h-full object-cover"/>
                                 </div>
                                 <span className="text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-black)]">
                                     {state.userName}
@@ -89,7 +90,8 @@ const Comments = () => {
                                 </span>
                             </div>
                             <div className="rounded-full overflow-hidden aspect-[1/1] w-[1.8rem]">
-                                <img src="/src/assets/icon/icon-more.svg" alt="" className="w-full h-full object-cover" />
+                                <img src="/src/assets/icon/icon-more.svg" alt=""
+                                     className="w-full h-full object-cover"/>
                             </div>
                         </div>
                         <p className="mt-[2.4rem] text-[1.6rem] font-[600] leading-[140%] text-[var(--moneed-black)]">
@@ -99,16 +101,18 @@ const Comments = () => {
                             {state.content}
                         </p>
                         {state.postImages.length > 0 && <div className="mt-[2.4rem]">
-                            <ImageCarousel slides={state.postImages} options={OPTIONS} />
+                            <ImageCarousel slides={state.postImages} options={OPTIONS}/>
                         </div>}
                     </div>
                     <div className="flex pb-[1.6rem] pt-[.4rem]">
-                        {state.isliked ? <Icon iconName={heartIcon} width={18} height={18} ></Icon> :
-                            <Icon iconName={redHeartIcon} width={18} height={18} ></Icon>}
-                        <span className="mr-[1rem] text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-8)]">6</span>
-                        <Icon iconName={commentIcon} width={20} height={20} />
-                        <span className="mr-[1rem] text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-8)]">8 </span>
-                        <Icon iconName={sharingIcon} width={20} height={20} />
+                        {state.isliked ? <Icon iconName={heartIcon} width={18} height={18}></Icon> :
+                            <Icon iconName={redHeartIcon} width={18} height={18}></Icon>}
+                        <span
+                            className="mr-[1rem] text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-8)]">6</span>
+                        <Icon iconName={commentIcon} width={20} height={20}/>
+                        <span
+                            className="mr-[1rem] text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-8)]">8 </span>
+                        <Icon iconName={sharingIcon} width={20} height={20}/>
                     </div>
                 </div>
                 <div className="flex gap-[1rem] py-[1.8rem]">
@@ -119,34 +123,38 @@ const Comments = () => {
                         8
                     </div>
                 </div>
-                {comments.map((item) => (
-                    <Comment
-                        userName={item.userName}
-                        content={item.content}
-                        depth={0}
-                        createdAt={item.createdAt}
-                        replies={item.replies}
-                    >
-                    </Comment>
-                ))}
-                <div className="relative flex items-center bg-[var(--moneed-gray-4)] rounded-[1.2rem] px-[2.4rem] py-[.8rem] w-full">
-                    <Input
-                        type="text"
-                        onChange={handleWriteComment}
-                        className="bg-transparent text-[1.4rem] text-[var(--moneed-gray-7)]"
-                        placeholder="의견을 공유해보세요.(최대 300자)"
-                        value={newComment}
-                    />
+                <div className="max-w-[128rem] mx-auto flex flex-col gap-[3.6rem]">
+                    {comments.map((item) => (
+                        <Comment
+                            userName={item.userName}
+                            content={item.content}
+                            depth={0}
+                            createdAt={item.createdAt}
+                            replies={item.replies}
+                        >
+                        </Comment>
+                        ))}
+                </div>
                     <div
-                        className="absolute right-[1rem] rounded-full overflow-hidden aspect-[1/1] w-[3.6rem] bg-[var(--moneed-brand-color)] cursor-pointer"
-                        onClick={handleAddComment}
-                    >
-                        <img src="/src/assets/icon/icon-submit-comment.svg" alt="" className="w-full h-full object-cover" />
+                        className="mt-[4rem] relative flex items-center bg-[var(--moneed-gray-4)] rounded-[1.2rem] px-[2.4rem] py-[.8rem] w-full">
+                        <Input
+                            type="text"
+                            onChange={handleWriteComment}
+                            className="bg-transparent text-[1.4rem] text-[var(--moneed-gray-7)]"
+                            placeholder="의견을 공유해보세요.(최대 300자)"
+                            value={newComment}
+                        />
+                        <div
+                            className="absolute right-[1rem] rounded-full overflow-hidden aspect-[1/1] w-[3.6rem] bg-[var(--moneed-brand-color)] cursor-pointer"
+                            onClick={handleAddComment}
+                        >
+                            <img src="/src/assets/icon/icon-submit-comment.svg" alt=""
+                                 className="w-full h-full object-cover"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </>
-    );
-};
+            </>
+            );
+            };
 
 export default Comments;
