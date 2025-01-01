@@ -25,10 +25,11 @@ const SelectStockType = () => {
         <>
             <div className="px-[2rem] max-w-[128rem] mx-auto md:bg-[#EFEFF3] md:pt-[4rem]">
                 <div className="md:max-w-[59.2rem] md:rounded-[2.4rem] md:bg-white md:mx-auto md:pt-[6rem] md:pb-[4rem]">
-                    <h2 className="text-[2.4rem] font-[700] leading-[140%] text-[var(--moneed-black)] mt-[6.1rem] md:mt-0 md:text-center">어떤 종목을 선호하시나요?</h2>
-                    <p className="text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-7)] md:text-center" >*선택된 관심 종목 게시판이 보여집니다.</p>
-
-                    <div className="flex flex-wrap gap-[.8rem] mt-[3.7rem] md:px-[10.6rem] md:max-h-[38.5rem] md:overflow-y-auto">
+                    <div className="sticky top-[6rem] bg-white md:bg-[transparent] pb-[3.6rem] md:static">
+                        <h2 className="text-[2.4rem] font-[700] leading-[140%] text-[var(--moneed-black)] pt-[6.1rem] md:pt-0 md:text-center">어떤 종목을 선호하시나요?</h2>
+                        <p className="text-[1.4rem] font-[400] leading-[140%] text-[var(--moneed-gray-7)] md:text-center" >*선택된 관심 종목 게시판이 보여집니다.</p>
+                    </div>
+                    <div className="flex flex-wrap gap-[.8rem] md:px-[10.6rem] md:max-h-[38.5rem] md:overflow-y-auto">
                         {filteredStockNames.map(({ stocktype, value, stockimg }) => (
                             <div
                                 key={value}
