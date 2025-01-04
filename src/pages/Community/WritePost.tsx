@@ -56,7 +56,7 @@ const WritePost = () => {
                         placeholder="의견을 입력해주세요"
                         className="w-full h-[30rem] py-[1.6rem] text-[1.6rem] font-[400] leading-[140%] placeholder:text-[var(--moneed-gray-7)] focus:outline-none"
                     />
-                    <div className="flex items-center justify-between mt-[1.6rem]">
+                    <div className="flex items-center justify-between mt-[1.6rem] fixed bottom-0 left-0 right-0 z-[20] h-[5.2rem] px-8 bg-white">
                         <button
                             className="rounded-full overflow-hidden aspect-[1/1] w-[3.6rem] cursor-pointer"
                             type="submit"
