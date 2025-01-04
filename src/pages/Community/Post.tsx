@@ -71,11 +71,11 @@ const Post = ({ userName, content, isliked, postId, stocktype, postImages, likes
 
     return (
         <>
-            <div className="border border-solid border-[var(--moneed-gray-5)] rounded-[1.8rem] mb-[1.6rem] "
-                onClick={(e) => movetoDetail(e, postId)} >
+            <div className="relative border border-solid border-[var(--moneed-gray-5)] rounded-[1.8rem] mb-[1.6rem] ">
+                <button type="button" onClick={(e) => movetoDetail(e, postId)} className="absolute inset-0"></button>
                 <div className="pl-[1.8rem] pb-[1.3rem] pr-[1.2rem] pt-[1.4rem]">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-[.6rem]">
+                        <div className="flex items-center gap-[.6rem] flex-1">
                             <div className="rounded-full overflow-hidden aspect-[1/1] w-[3.2rem]">
                                 <img src="/src/assets/temp/sample3.png" alt="" className="w-full h-full object-cover" />
                             </div>
@@ -87,27 +87,29 @@ const Post = ({ userName, content, isliked, postId, stocktype, postImages, likes
                                 {createdAt}
                             </span>
                         </div>
-                        <div className="cursor-pointer rounded-full overflow-hidden aspect-[1/1] w-[2.4rem]"
-                            onClick={handleOpendropdown}>
-                            <img src="/src/assets/icon/icon-more.svg" alt="" className="w-full h-full object-cover" />
-                        </div>
-                        {isDropdownOpen && <Dropdown
-                            firsttext="게시글 수정"
-                            secondtext="게시글 삭제"
-                            secondevent={openpostDeletemodal}
-                            firstevent={onEditPost}
-                        ></Dropdown>}
-                        {isModalOpen && <Modal
-                            leftButtontext="취소하기"
-                            rightButtontext="삭제하기"
-                            leftButtonevent={closepostModal}
-                            rightbuttonevent={handledeletePost}
-                        >
-                            <div>
-                                삭제된 내용은 복구되지 않아요.<br />
-                                정말 삭제하실건가요?
+                        <div className="relative ml-auto shrink-0 z-[2]">
+                            <div className="cursor-pointer rounded-full overflow-hidden aspect-[1/1] w-[2.4rem]"
+                                onClick={handleOpendropdown}>
+                                <img src="/src/assets/icon/icon-more.svg" alt="" className="w-full h-full object-cover" />
                             </div>
-                        </Modal>}
+                            {isDropdownOpen && <Dropdown
+                                firsttext="게시글 수정"
+                                secondtext="게시글 삭제"
+                                secondevent={openpostDeletemodal}
+                                firstevent={onEditPost}
+                            ></Dropdown>}
+                            {isModalOpen && <Modal
+                                leftButtontext="취소하기"
+                                rightButtontext="삭제하기"
+                                leftButtonevent={closepostModal}
+                                rightbuttonevent={handledeletePost}
+                            >
+                                <div>
+                                    삭제된 내용은 복구되지 않아요.<br />
+                                    정말 삭제하실건가요?
+                                </div>
+                            </Modal>}
+                        </div>
                     </div>
                     <p className="mt-[1.2rem] text-[1.6rem] font-bold leading-[135%] text-[var(--moneed-black)] line-clamp-1">
                         {title}
