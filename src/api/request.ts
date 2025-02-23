@@ -6,7 +6,7 @@ import {
 	AxiosResponse,
 } from "axios";
 
-const BASE_PATH = "";
+const BASE_PATH = "/api";
 
 const Instance = (): AxiosInstance => {
 	const instance: AxiosInstance = axios.create({

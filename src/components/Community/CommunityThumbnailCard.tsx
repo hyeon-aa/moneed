@@ -1,7 +1,7 @@
 import DateFormatter from "../../util/Dateformatter";
 
 type CommunityThumbnailCardPropsType = {
-    userName: string
+    userName?: string
     content?: string
     title?: string
     createdAt: string

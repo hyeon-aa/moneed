@@ -7,6 +7,7 @@ import PostCarousel from "../../components/Carousel/PostCarousel";
 import useMoveScroll from "../../hook/usemoveScroll";
 import StockInfoBox from "../../components/Community/StockInfoBox";
 import CompanyInfoBox from "../../components/Community/CompanyInfoBox";
+import { useGetTop5PostsQuery } from "../../api/community/communityQueries";
 
 
 const Community = () => {
@@ -30,6 +31,8 @@ const Community = () => {
     const { onMoveToElement: moveToCategory } = useMoveScroll(categoryRef);
     const { onMoveToElement: moveToHotPosts } = useMoveScroll(hotPostsRef);
     const { onMoveToElement: moveToVote } = useMoveScroll(voteRef);
+
+    const { data: top5Posts, isLoading, error } = useGetTop5PostsQuery();
 
     const topPosts = [
         {
@@ -168,7 +171,7 @@ const Community = () => {
                                     </span>
                                 </div>
                             </div>
-                            <PostCarousel slides={topPosts} options={POSTOPTIONS}></PostCarousel>
+                            {top5Posts && <PostCarousel slides={top5Posts} options={POSTOPTIONS}></PostCarousel>}
                             <div ref={categoryRef} className="mt-[2.8rem]">
                                 <div className="flex items-baseline gap-[.8rem] mb-[1.8rem]">
                                     <h2 className="text-[2.2rem] leading-[145%] font-[700] text-[var(--moneed-black)] lg:text-[2.4rem] lg:leading-[140%]">

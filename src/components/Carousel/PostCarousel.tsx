@@ -6,7 +6,7 @@ import CommunityThumbnailCard from '../Community/CommunityThumbnailCard'
 type PropType = {
     slides: {
         postId: number;
-        userName: string
+        userName?: string
         content: string
         title: string
         createdAt: string
