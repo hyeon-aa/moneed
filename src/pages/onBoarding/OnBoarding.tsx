@@ -1,12 +1,13 @@
+import { getKakaoLoginUrl } from "../../api/auth/authApi";
 import Button from "../../components/Button";
 
 const OnBoarding = () => {
+    const VITE_TEMP_BASE_URL = import.meta.env.VITE_TEMP_BASE_URL;
 
-    const KAKAO_CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
-    const REDIRECT_URI = "";
+    const handleKakaoLogin = async() => {
+        const kakaoLoginPath = await getKakaoLoginUrl()
+        const kakaoAuthUrl = `${VITE_TEMP_BASE_URL}${kakaoLoginPath}`
 
-    const handleKakaoLogin = () => {
-        const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
         window.location.href = kakaoAuthUrl;
     };
 

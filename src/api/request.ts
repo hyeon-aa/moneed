@@ -6,11 +6,10 @@ import {
 	AxiosResponse,
 } from "axios";
 
-const BASE_PATH = "";
-
 const Instance = (): AxiosInstance => {
 	const instance: AxiosInstance = axios.create({
-		baseURL: BASE_PATH,
+		baseURL: import.meta.env.VITE_API_BASE_URL,
+		withCredentials: true,
 		headers: {
 			"Content-type": "application/json",
 		},
