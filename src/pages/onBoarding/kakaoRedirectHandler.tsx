@@ -8,9 +8,7 @@ const KakaoRedirectHandler = () => {
   useEffect(() => {
     const code = new URL(window.location.href).searchParams.get("code");
 
-    useEffect(() => {
-      console.log("카카오 리다이렉트 페이지 도착");
-    });
+    console.log("카카오 리다이렉트 페이지 도착");
 
     if (code) {
       console.log("code", code);
